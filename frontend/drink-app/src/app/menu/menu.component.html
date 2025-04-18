@@ -1,0 +1,17 @@
+<h2>Menú de Bebidas</h2>
+
+<ul>
+  <li *ngFor="let drink of menu">
+    {{ drink.name }} - {{ drink.description }} ({{ drink.size }}) - ${{ drink.price }}
+  </li>
+</ul>
+
+<h3>Agregar nueva bebida</h3>
+<form (ngSubmit)="addDrink()">
+  <input [(ngModel)]="newDrink.id" name="id" placeholder="ID" required>
+  <input [(ngModel)]="newDrink.name" name="name" placeholder="Nombre" required>
+  <input [(ngModel)]="newDrink.description" name="description" placeholder="Descripción" required>
+  <input [(ngModel)]="newDrink.size" name="size" placeholder="Tamaño" required>
+  <input [(ngModel)]="newDrink.price" name="price" placeholder="Precio" type="number" required>
+  <button type="submit">Agregar</button>
+</form>
