@@ -1,0 +1,17 @@
+.form-control {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  margin-top: 10px;
+}
+
+.text-danger {
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.form-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+} 

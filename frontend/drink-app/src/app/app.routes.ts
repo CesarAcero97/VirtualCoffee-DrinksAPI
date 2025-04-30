@@ -1,7 +1,9 @@
 import { Routes } from '@angular/router';
-import { MenuComponent } from './menu/menu.component';
+import { DrinkListComponent } from './components/drink-list/drink-list.component';
+import { DrinkFormComponent } from './components/drink-form/drink-form.component';
 
 export const routes: Routes = [
-	{ path: 'menu', component: MenuComponent },
-	{ path: '', redirectTo: '/menu', pathMatch: 'full' }
+	{ path: '', redirectTo: '/drinks', pathMatch: 'full' },
+	{ path: 'drinks', component: DrinkListComponent },
+	{ path: 'drinks/new', component: DrinkFormComponent }
 ];
