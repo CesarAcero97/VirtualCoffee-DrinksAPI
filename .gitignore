@@ -142,3 +142,60 @@ logs
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.* 
+.angular
+
+# Angular specific
+.angular/
+dist/
+tmp/
+out-tsc/
+bazel-out/
+.sass-cache/
+connect.lock
+coverage/
+libpeerconnection.log
+testem.log
+typings/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Angular IDE - Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Angular Misc
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+.angular
+
+# Angular Cache Files
+frontend/drink-app/.angular/cache/**/*
+frontend/drink-app/.angular/cache/*/.tsbuildinfo
+frontend/drink-app/.angular/cache/*/vite/deps/*
+frontend/drink-app/.angular/cache/*/babel/*
+frontend/drink-app/.angular/cache/*/ngcc/*
+frontend/drink-app/.angular/cache/*/ng/*
+frontend/drink-app/.angular/cache/*/esbuild/*
+frontend/drink-app/.angular/cache/*/webpack/*
+frontend/drink-app/.angular/cache/*/node_modules/*
+frontend/drink-app/.angular/cache/*/package-lock.json
+frontend/drink-app/.angular/cache/*/yarn.lock
+frontend/drink-app/.angular/cache/*/pnpm-lock.yaml
+
+# Angular Build Artifacts
+frontend/drink-app/dist/
+frontend/drink-app/tmp/
+frontend/drink-app/out-tsc/
+frontend/drink-app/.angular/cache/19.2.8/drink-app/vite/deps/@angular_common_http.js

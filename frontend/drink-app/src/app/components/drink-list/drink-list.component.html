@@ -1,51 +1,49 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="table-responsive">
-        <table class="table table-hover">
-          <thead class="table-dark">
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Tamaños</th>
-              <th>Precio</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let drink of drinks">
-              <td>{{ drink.id }}</td>
-              <td>{{ drink.name }}</td>
-              <td>{{ drink.description }}</td>
-              <td>{{ drink.availableSizes }}</td>
-              <td>${{ drink.price }}</td>
-              <td>
-                <button class="btn btn-info btn-sm" (click)="showDrinkDetails(drink.id!)">
-                  Ver Detalles
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Tamaños</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let drink of drinks">
+            <td>{{ drink.id }}</td>
+            <td>{{ drink.name }}</td>
+            <td>{{ drink.description }}</td>
+            <td>{{ drink.availableSizes }}</td>
+            <td>${{ drink.price }}</td>
+            <td>
+              <button class="btn btn-info btn-sm" (click)="showDrinkDetails(drink.id!)">
+                Ver Detalles
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
 
-    <div class="col-md-12 mt-4" *ngIf="selectedDrink">
-      <div class="card">
-        <div class="card-header bg-info text-white">
-          Detalles de la Bebida
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-6">
-              <h5 class="card-title">{{ selectedDrink.name }}</h5>
-              <p class="card-text">{{ selectedDrink.description }}</p>
-            </div>
-            <div class="col-md-6">
-              <p class="card-text"><strong>Precio:</strong> ${{ selectedDrink.price }}</p>
-              <p class="card-text"><strong>Tamaños disponibles:</strong> {{ selectedDrink.availableSizes }}</p>
-            </div>
+  <div class="col-md-12 mt-4" *ngIf="selectedDrink">
+    <div class="card">
+      <div class="card-header bg-info text-white">
+        Detalles de la Bebida
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="card-title">{{ selectedDrink.name }}</h5>
+            <p class="card-text">{{ selectedDrink.description }}</p>
+          </div>
+          <div class="col-md-6">
+            <p class="card-text"><strong>Precio:</strong> ${{ selectedDrink.price }}</p>
+            <p class="card-text"><strong>Tamaños disponibles:</strong> {{ selectedDrink.availableSizes }}</p>
           </div>
         </div>
       </div>

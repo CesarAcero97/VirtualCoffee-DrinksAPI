@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MenuComponent } from './menu.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -8,9 +10,13 @@ describe('MenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MenuComponent]
-    })
-    .compileComponents();
+      imports: [
+        MenuComponent,
+        CommonModule,
+        FormsModule,
+        HttpClientTestingModule
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;

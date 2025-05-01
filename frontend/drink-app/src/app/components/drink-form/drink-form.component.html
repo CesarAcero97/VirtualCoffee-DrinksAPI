@@ -1,41 +1,76 @@
-<div class="container mt-4">
-  <h2>Agregar Nueva Bebida</h2>
+<h2>Agregar Nueva Bebida</h2>
+
+<form [formGroup]="drinkForm" (ngSubmit)="onSubmit()" class="mt-3">
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>Campo</th>
+        <th>Valor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="align-middle">
+          <label for="name" class="form-label">Nombre</label>
+        </td>
+        <td>
+          <input type="text" class="form-control" id="name" formControlName="name" required>
+        </td>
+        <td class="align-middle">
+          <div *ngIf="drinkForm.get('name')?.invalid && drinkForm.get('name')?.touched" class="text-danger">
+            El nombre es requerido
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle">
+          <label for="description" class="form-label">Descripción</label>
+        </td>
+        <td>
+          <textarea class="form-control" id="description" formControlName="description" rows="3" required></textarea>
+        </td>
+        <td class="align-middle">
+          <div *ngIf="drinkForm.get('description')?.invalid && drinkForm.get('description')?.touched" class="text-danger">
+            La descripción es requerida
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle">
+          <label class="form-label">Tamaños Disponibles</label>
+        </td>
+        <td>
+          <div formArrayName="sizes" class="d-flex flex-wrap gap-3">
+            <div class="form-check" *ngFor="let size of availableSizes; let i = index">
+              <input type="checkbox" [formControlName]="i" class="form-check-input" [id]="'size-' + size">
+              <label class="form-check-label" [for]="'size-' + size">{{ size }}</label>
+            </div>
+          </div>
+        </td>
+        <td class="align-middle">
+          <div *ngIf="drinkForm.get('sizes')?.invalid && drinkForm.get('sizes')?.touched" class="text-danger">
+            Seleccione al menos un tamaño
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="align-middle">
+          <label for="price" class="form-label">Precio</label>
+        </td>
+        <td>
+          <input type="number" class="form-control" id="price" formControlName="price" step="0.01" required>
+        </td>
+        <td class="align-middle">
+          <div *ngIf="drinkForm.get('price')?.invalid && drinkForm.get('price')?.touched" class="text-danger">
+            El precio debe ser mayor o igual a 0
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   
-  <form [formGroup]="drinkForm" (ngSubmit)="onSubmit()" class="mt-3">
-    <div class="mb-3">
-      <label for="name" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="name" formControlName="name" required>
-      <div *ngIf="drinkForm.get('name')?.invalid && drinkForm.get('name')?.touched" class="text-danger">
-        El nombre es requerido
-      </div>
-    </div>
-
-    <div class="mb-3">
-      <label for="description" class="form-label">Descripción</label>
-      <textarea class="form-control" id="description" formControlName="description" rows="3" required></textarea>
-      <div *ngIf="drinkForm.get('description')?.invalid && drinkForm.get('description')?.touched" class="text-danger">
-        La descripción es requerida
-      </div>
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label">Tamaños Disponibles</label>
-      <div formArrayName="sizes">
-        <div class="form-check" *ngFor="let size of availableSizes; let i = index">
-          <input type="checkbox" [formControlName]="i" class="form-check-input" [id]="'size-' + size">
-          <label class="form-check-label" [for]="'size-' + size">{{ size }}</label>
-        </div>
-      </div>
-    </div>
-
-    <div class="mb-3">
-      <label for="price" class="form-label">Precio</label>
-      <input type="number" class="form-control" id="price" formControlName="price" step="0.01" required>
-      <div *ngIf="drinkForm.get('price')?.invalid && drinkForm.get('price')?.touched" class="text-danger">
-        El precio debe ser mayor o igual a 0
-      </div>
-    </div>
-
+  <div class="text-end mt-3">
     <button type="submit" class="btn btn-primary" [disabled]="!drinkForm.valid">Crear Bebida</button>
-  </form>
-</div> 
+  </div>
+</form> 

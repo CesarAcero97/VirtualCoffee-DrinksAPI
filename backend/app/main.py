@@ -1,8 +1,8 @@
+from typing import List
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, update, delete
-from typing import List
 from app.menu import router as menu_router
 from . import models, schemas
 from .database import get_db, engine, Base

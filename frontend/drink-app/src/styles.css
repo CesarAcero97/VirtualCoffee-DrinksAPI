@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Global font settings */
+* {
+  font-family: Arial, sans-serif;
+}
+
+/* Ensure all text elements use Arial */
+body, h1, h2, h3, h4, h5, h6, p, span, div, input, textarea, button, label, th, td {
+  font-family: Arial, sans-serif;
+}
+
+/* Bootstrap overrides to ensure Arial is used */
+.btn, .form-control, .form-label, .table, .card, .navbar {
+  font-family: Arial, sans-serif;
+}
