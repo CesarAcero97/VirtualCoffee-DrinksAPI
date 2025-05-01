@@ -199,3 +199,4 @@ frontend/drink-app/dist/
 frontend/drink-app/tmp/
 frontend/drink-app/out-tsc/
 frontend/drink-app/.angular/cache/19.2.8/drink-app/vite/deps/@angular_common_http.js
+/frontend/drink-app/.angular/cache
