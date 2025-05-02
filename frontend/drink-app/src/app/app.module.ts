@@ -21,4 +21,4 @@ import { DrinkFormComponent } from './components/drink-form/drink-form.component
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { } 
+export class AppModule { }
